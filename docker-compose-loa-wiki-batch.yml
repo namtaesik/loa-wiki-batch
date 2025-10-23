@@ -1,0 +1,23 @@
+name: loa-wiki-batch-service
+services:
+  loa-wiki-web:
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: 5
+    hostname: ${HOSTNAME}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: loa-wiki-batch
+    image: loa-wiki-batch-img:current-code
+    ports:
+      - "7001:7001"
+    volumes:
+      - ./logs:/app/logs
+    environment:
+      - TARGET=${TARGET}
