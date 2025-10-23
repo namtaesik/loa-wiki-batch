@@ -7,7 +7,7 @@ echo "Git..............................End"
 
 echo "Docker..............................Start"
 echo "[docker img build]"
-docker build -t loa-wiki-batch:current-code -f Dockerfile . --no-cache
+docker build -t loa-wiki-batch:current-code -f Dockerfile .
 
 echo "[docker img save]"
 docker save -o loa-wiki-batch-current-code.tar loa-wiki-batch:current-code
