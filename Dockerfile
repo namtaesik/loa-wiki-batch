@@ -6,6 +6,8 @@ WORKDIR /app
 COPY . .
 ## NestJS project install & build
 RUN npm install
+#Prisma.sql`` 사용을 위함
+RUN npx prisma generate
 RUN npm run build
 ## Application run
 EXPOSE 7001
