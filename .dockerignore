@@ -1,4 +1,10 @@
+.git
+.dockerignore
+*Dockerfile*
 coverage
 dist
 logs
 node_modules
+prisma/migrations
+prisma/*/migrations
+prisma/client
