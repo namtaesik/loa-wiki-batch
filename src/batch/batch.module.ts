@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { BaseModule } from './base/base.module';
+import { LoaItemsModule } from './loa-items/loa-items.module';
 
 @Module({
-  imports: [BaseModule]
+  imports: [LoaItemsModule]
 })
 export class BatchModule {}
