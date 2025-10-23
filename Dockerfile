@@ -1,15 +1,19 @@
-# Base image
-FROM node:20-alpine AS builder
-# Create app directory
+FROM node:22-alpine AS builder
 WORKDIR /app
-## Copy WORKDIR /app
 COPY . .
-## NestJS project install & build
+RUN apk add --no-cache openssl
 RUN npm install
-#Prisma.sql`` 사용을 위함
-RUN npx prisma generate
 RUN npm run build
-## Application run
+
+FROM node:22-alpine
+WORKDIR /app
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/.env.* ./
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/prisma ./prisma
+RUN apk add --no-cache openssl
+RUN npm install --production
+
 EXPOSE 7001
 ENV TARGET="dev"
 CMD ["sh", "-c", "npm run start:$TARGET"]
