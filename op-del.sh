@@ -2,12 +2,12 @@ TARGET=$1
 HOSTNAME=$(hostname)
 
 if [ -z "$TARGET" ]; then
-  echo "Error: Environment argument ['test', 'dev', 'prod'] is missing."
+  echo "Error: Environment argument ['local', 'dev', 'prod'] is missing."
   exit 1
 fi
 
-if [ "$TARGET" != "test" ] && [ "$TARGET" != "dev" ] && [ "$TARGET" != "prod" ]; then
-  echo "Error: Environment argument must be one of ['test', 'dev', 'prod']."
+if [ "$TARGET" != "local" ] && [ "$TARGET" != "dev" ] && [ "$TARGET" != "prod" ]; then
+  echo "Error: Environment argument must be one of ['local', 'dev', 'prod']."
   exit 2
 fi
 
