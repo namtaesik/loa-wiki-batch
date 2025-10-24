@@ -9,7 +9,7 @@ import { LostArkHttpClientService } from 'src/infrastructure/http/lostark/lostar
 export class LoaItemsService {
   constructor(private readonly httpService: LostArkHttpClientService) {}
 
-  @Cron(CronExpression.EVERY_10_MINUTES, { name: LoaItems.LoaItemsJob, timeZone: process.env.TIME_ZONE })
+  @Cron(CronExpression.EVERY_HOUR, { name: LoaItems.LoaItemsJob, timeZone: process.env.TIME_ZONE })
   async test(): Promise<void> {
     const job = new TaskJob(LoaItems.LoaItemsJob, this.httpService);
     await job.exec(true);
