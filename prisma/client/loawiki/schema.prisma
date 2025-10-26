@@ -1,6 +1,6 @@
 generator client {
   provider        = "prisma-client-js"
-  output          = "./client/loawiki"
+  output          = "../client/loawiki"
   previewFeatures = ["multiSchema"]
 }
 
