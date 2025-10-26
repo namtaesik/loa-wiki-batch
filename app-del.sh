@@ -15,7 +15,7 @@ echo "AppDelTarget($TARGET, $HOSTNAME)..............................Start"
 
 echo "DockerCompose..............................Start"
 echo "[docker compose down]"
-TARGET=$TARGET HOSTNAME=$HOSTNAME docker compose -f ./docker-compose-loa-wiki-batch down
+TARGET=$TARGET HOSTNAME=$HOSTNAME docker compose -f ./docker-compose-loa-wiki-batch.yml down
 echo "DockerCompose..............................End"
 
 echo "AppDelTarget($TARGET, $HOSTNAME)..............................End"
