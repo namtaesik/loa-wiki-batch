@@ -11,7 +11,7 @@
     "prisma:generate": "npm run prisma:generate:default && npm run prisma:generate:loawiki",
     "prisma:generate:default": "prisma generate --schema=./prisma/schema.prisma",
     "prisma:generate:loawiki": "prisma generate --schema=./prisma/loa-wiki/schema.prisma",
-    "prisma:db:push:local": "dotenv -e .env.local prisma db push",
+    "prisma:db:push:local": "dotenv -e .env.local prisma db push --schema=./prisma/loa-wiki/schema.prisma",
     "start": "cross-env NODE_ENV=local nest start",
     "start:local": "cross-env NODE_ENV=local nest start --watch",
     "start:debug": "cross-env NODE_ENV=local nest start --debug --watch",
