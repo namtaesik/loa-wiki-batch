@@ -18,8 +18,6 @@ echo "DockerCompose..............................Start"
 echo "[docker compose down]"
 TARGET=$TARGET HOSTNAME=$HOSTNAME docker compose -f ./docker-compose-loa-wiki-batch.yml down
 
-find /code/va-user-web/web/public/css -name '*.css' -exec touch {} \;
-
 echo "[docker compose up]"
 TARGET=$TARGET HOSTNAME=$HOSTNAME docker compose -f ./docker-compose-loa-wiki-batch.yml up -d --build
 
