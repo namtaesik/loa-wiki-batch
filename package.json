@@ -8,7 +8,7 @@
   "scripts": {
     "build": "npm run prisma:generate && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "prisma:generate": "npm run prisma:generate:default && npm run prisma:generate:loawiki",
+    "prisma:generate": "npm run prisma:generate:loawiki",
     "prisma:generate:default": "prisma generate --schema=./prisma/schema.prisma",
     "prisma:generate:loawiki": "prisma generate --schema=./prisma/loa-wiki/schema.prisma",
     "prisma:db:push:local": "dotenv -e .env.local prisma db push",
