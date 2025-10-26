@@ -11,7 +11,6 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/.env.* ./
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prisma ./prisma
-COPY --from=builder /app/prisma/loa-wiki ./prisma/loa-wiki
 RUN apk add --no-cache openssl
 RUN npm install --production
 

@@ -10,9 +10,6 @@ services:
         max-size: 10m
         max-file: 5
     hostname: ${HOSTNAME}
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: loa-wiki-batch
     image: loa-wiki-batch-img:current-code
     ports:
