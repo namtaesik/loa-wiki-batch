@@ -2,13 +2,13 @@ generator client {
   provider = "prisma-client-js"
   output          = "../client/loawiki"
   previewFeatures = ["multiSchema"]
-  migrationMode = "multiSchema"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
   schemas  = ["loawiki", "common"]
+  migrationMode = "multiSchema"
 }
 
 model log {
