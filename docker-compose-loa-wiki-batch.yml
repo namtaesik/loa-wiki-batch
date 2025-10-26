@@ -18,5 +18,3 @@ services:
       - ./logs:/app/logs
     environment:
       - TARGET=${TARGET}
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
